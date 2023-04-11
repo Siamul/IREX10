@@ -107,7 +107,7 @@ void createTemplates(const std::shared_ptr<Irex::Interface> implementation,
       cerr << "Error returned after call to initializeTemplateCreation()." << endl;
       raise(SIGTERM);
    }
-
+   ret = implementation->initializeTemplateCreation(configDir, type);  //extra line added to check for error.
    for (const auto imagePath : imagePaths)
    {
       IrisImage iris = readImage(imagePath);
